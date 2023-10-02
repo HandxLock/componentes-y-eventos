@@ -43,7 +43,8 @@
   color: #888;
 }
 body{
-  background-color: #6FCC00;
+  background: rgb(84,255,180);
+  background: linear-gradient(43deg, rgba(84,255,180,0.8307365182401085) 0%, rgba(140,255,0,1) 100%);
 }
 .svg-inline--fa.fa-2xl{
   padding: 5px;

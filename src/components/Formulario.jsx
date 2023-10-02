@@ -8,6 +8,8 @@ function Formulario({mostrarAlerta}) {
   const [contraseña,setContraseña]=useState('');
   const [recontraseña,setRecontraseña]=useState('');
   const correo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const contraseñaMinimo = /^(.{8,})$/
+
 
   const validarInput = (e)=>{
     e.preventDefault();
@@ -27,6 +29,12 @@ function Formulario({mostrarAlerta}) {
     }else if(!correo.test(email)){
       mostrarAlerta({
         mensaje:'correo no valido',
+        color:'danger'
+      })
+      return;
+    }else if(!contraseñaMinimo.test(contraseña)){
+      mostrarAlerta({
+        mensaje:'La contraseña debe contener mínimo 8 caracteres',
         color:'danger'
       })
       return;
